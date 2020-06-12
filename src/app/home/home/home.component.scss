@@ -1,0 +1,22 @@
+.nav-item{
+    color: lightcoral;
+    padding: 4px 8px 0px 31px;
+    .nav-link{
+        font-size:21px
+    }
+   
+}
+.nav-item:hover{
+    color:blue;
+    // padding: 4px 8px 0px 31px;
+    background-color:lightgreen;
+}
+.hr{
+    border-top: 2px solid crimson ;
+    width:100%;
+}
+.menu{
+    font-weight: 600;
+    position: fixed;
+    height:30px
+}

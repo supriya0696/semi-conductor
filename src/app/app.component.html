@@ -1,0 +1,36 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+    <a routerLink="/dashboard" class="nav-item nav-link active" value="dashboard">Dashboard</a>
+    <a routerLink="/about"class="nav-item nav-link active" value="about">About</a>
+    <a routerLink="/user" class="nav-item nav-link active"  *ngIf="isAdmin" value="users">Users</a>
+    <a routerLink="/analytics" class="nav-item nav-link active" tabindex="-1" value="analytics">Analytics</a>
+    <a class="nav-item nav-link pull-right" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<!-- main app container --> 
+
+<div class="jumbotron" >
+  <div>
+    <img  id="logo" class="login-background" src="./assets/login-page-background-image.png">
+  <div class="container">
+      <div class="row">      
+          <div class="col-sm-6 offset-sm-3 login">              
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+<div *ngIf="currentUser">
+  
+<footer id="sticky-footer" class="navbar navbar-expand navbar-dark bg-dark fotter"  >
+  <marquee class="mrq">Welcome to the world of semi-conductor</marquee>
+  <div class="container text-center display-5 footer" >
+    <small><strong style="font-size:20px">Copyright &copy;<a href="www.google.com"> www.semi-conductor.com</a></strong></small>
+  </div>
+</footer>
+</div>
+</div>

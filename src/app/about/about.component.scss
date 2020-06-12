@@ -1,0 +1,29 @@
+.nav-item{
+    color: lightcoral;
+    padding: 4px 8px 0px 31px;
+    .nav-link{
+        font-size:21px
+    }
+   
+}
+.nav-item:hover{
+    color:black;
+    // padding: 4px 8px 0px 31px;
+    background-color:lightgreen;
+}
+.hr{
+    border-top: 2px solid crimson ;
+    width:100%;
+}
+.menu{
+    position: absolute;
+    margin-left: -450px;
+    color: black;
+}
+.nav-link{
+    color: beige;
+}
+.heading{
+    font-weight: 500;
+    font-size: 20pt;
+}

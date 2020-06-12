@@ -1,0 +1,24 @@
+
+<div ><strong class="title">Details of User Stored</strong></div>
+
+<table class="table table-info outer-table">
+  <thead>
+    <tr>
+      <th scope="col">SL NO</th>
+      <th scope="col">logged In User</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody  *ngFor="let user of usersStored">
+    <tr>
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.username}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td><button id="cross" value="{{user.id}}" (click)="deleteUser($event)"><b>X</b></button></td>
+    </tr>
+    
+  </tbody>
+</table>

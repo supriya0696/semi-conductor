@@ -1,0 +1,40 @@
+<h2>Forgot Password</h2>
+<form [formGroup]="forgotPwdForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="username">username</label>
+    <input type="text" formControlName="username" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">username is required</div>
+    </div>
+</div>
+  <div class="form-group">
+      <label for="question">In which city you were born?</label>
+      <input type="text" formControlName="question" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.question.errors }" />
+      <div *ngIf="submitted && f.question.errors" class="invalid-feedback">
+          <div *ngIf="f.question.errors.required">question is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">confirmPassword</label>
+    <input type="confirmPassword" formControlName="confirmPassword" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+        <div *ngIf="f.confirmPassword.errors.required">confirmPassword is required</div>
+    </div>
+</div>
+  <div class="form-group">
+    
+      <button class="btn btn-primary m-3" >Save</button>
+      <!-- <button routerLink="/changePassword" class="btn btn-primary m-3">change Password</button> -->
+  </div>
+</form>

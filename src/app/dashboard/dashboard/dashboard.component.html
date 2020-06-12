@@ -1,0 +1,25 @@
+ 
+
+
+ <div class="form-group">
+    <label  for="chooseImageFile" ><b><strong>Choose to upload the file</strong></b><span class="required">*</span></label>
+
+    <br/>
+   <input id=imageDiv name="imageUrl" type="file" accept="" style="color:transparent"   (change)="onUpload($event)"  required/>
+    <div><ul *ngIf="uploadedFiles.length">
+        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+    </ul>
+    <img src="{{this.imgSrc}}" style="max-width:80px;max-height:80px;margin-left: 34px;"
+    name="imagePreview" />
+    </div>
+  </div> 
+  <div id="buttton" *ngIf="uploadedFiles.length">
+  <button id="useful" class="btn btn-warning m-3" value="Yes" (click)="uploadData($event)"> UseFull ... !!! </button>    
+  <button id="no" class="btn btn-warning m-3" (click)="uploadData($event)">No </button>    
+  </div>
+
+  <img src="./assets/semiconductor2.png" class="rounded-circle img" alt="Cinque Terre">
+
+
+
+
