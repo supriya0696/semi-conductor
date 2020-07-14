@@ -1,0 +1,23 @@
+
+<div class="jumbotron" >
+  <div>
+    
+  <div class="input-group">
+    <input type="text" class="form-control" #itemTitle>
+      <button class="btn hover-cursor" (click)="onAdd(itemTitle)">      
+      add
+      </button>
+  </div>
+  </div>
+</div>
+
+<div style="margin: 5px;">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of toDoListArray">
+      {{item.title}} 
+      <span class="hover-cursor pull-right" style="float: right;" (click)="onDelete(item)">
+        X
+      </span>
+    </li>
+  </ul>
+  </div>

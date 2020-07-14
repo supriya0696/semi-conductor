@@ -4,6 +4,16 @@
 
 export const environment = {
   apiUrl: 'http://localhost:4200/',
+   firebaseConfig : {
+    apiKey: "AIzaSyA7056XbT_HMcAyUyM-pWu6JsycRvlKebg",
+    authDomain: "todoproject-d3e6c.firebaseapp.com",
+    databaseURL: "https://todoproject-d3e6c.firebaseio.com",
+    projectId: "todoproject-d3e6c",
+    storageBucket: "todoproject-d3e6c.appspot.com",
+    messagingSenderId: "1082229695724",
+    appId: "1:1082229695724:web:fc438697e6e12f1148b1c9",
+    measurementId: "G-KR2WHKX8M5"
+  }
 };
 
 /*

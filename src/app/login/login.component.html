@@ -26,3 +26,13 @@ margin-left: -340px;" alt="Cinque Terre">
         <button routerLink="/changePassword" class="btn btn-primary m-3">change Password</button>
     </div>
 </form>
+
+<button id="login_google" class="btn btn-primary m-3" (click)="signInGoogle('Goolge')">Sign in with google account</button>
+<button id="logout" class="btn btn-primary"(click)=logout()>logout</button>
+
+<div *ngIf="user">
+    <img src="{{user.photoUrl}}">
+
+    <h4>{{user.name}}</h4>
+    <p>{{user.email}}</p>
+</div>

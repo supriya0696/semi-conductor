@@ -1,22 +1,7 @@
-<div ><strong class="title">Analytics of time taken to upload the data</strong></div>
-
-<table class="table table-warning outer-table">
-  <thead>
-    <tr>
-      <th scope="col">FileName</th>
-      <th scope="col">Time taken to fetch the file</th>
-      <th scope="col">link to file the file</th>
-    </tr>
-  </thead>
-  <tbody  *ngFor="let user of analyticsData;">
-    <tr>
-      <!-- <th scope="row">{{user.id+1}}</th> -->
-      <td>{{user.fileName}}</td>
-      <td>{{user.uploadTime}}</td>
-      <td><a [href]="(user.image) " target="_blank">{{user.image}}</a></td>   
-     
-    </tr>
-    
-  </tbody>
-</table>
-<img  id="logo" class="login-background" src="./assets/images.jpg">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 md-3">
+      <app-table></app-table>
+      </div>
+  </div>
+</div>

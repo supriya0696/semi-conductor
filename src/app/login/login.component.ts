@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import {AuthService, GoogleLoginProvider} from 'angular4-social-login'
 
 import {  AuthenticationService } from 'src/app/services/authentication.service';
 import { AlertService } from '../services/alert.service';
+import { parseLazyRoute } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({templateUrl: 'login.component.html',
 selector: 'app-login',})
@@ -13,6 +15,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    user:any
 
     constructor(
         private formBuilder: FormBuilder,
@@ -20,9 +23,9 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthenticationService,
         private alertService: AlertService,
-        // private SpinnerService: NgxSpinnerService,
+        private socailAuthServ: AuthService,
+        // private 
     ) {
-        // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
             this.router.navigate(['/']);
         }
@@ -33,19 +36,14 @@ export class LoginComponent implements OnInit {
             username: ['', Validators.required],
             password: ['', Validators.required]
         });
-
-        // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['/main'];
     }
 
-    // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
 
     onSubmit() {
       debugger
         this.submitted = true;
-
-        // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
         }
@@ -62,5 +60,19 @@ export class LoginComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+    }
+
+    signInGoogle(platform : string){
+        platform = GoogleLoginProvider.PROVIDER_ID
+        this.socailAuthServ.signIn(platform).then(res=>{
+            console.log(res)
+            this.user=res;
+        })
+
+    }
+
+    logout(){
+        this.socailAuthServ.signOut();
+        console.log("user signed")
     }
 }
